@@ -13,3 +13,5 @@ function bubbleSort(arr) {
 }
 
 console.log(bubbleSort([8, 20, -2, 4, -6]))
+
+// Time Complexity: O(n^2) Quadratic Time Complexity

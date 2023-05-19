@@ -1,4 +1,3 @@
-# DSA_JS
+# Data Structure and Algorithms in JavaScript
 
-Private Repo Where I will push Algorithm and Data Structure codes with JS
-Total Practice
+Private Repo where I will push Algorithm and Data Structure codes with JavaScript

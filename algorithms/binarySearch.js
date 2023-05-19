@@ -17,3 +17,5 @@ function binarySearch(arr, target) {
 console.log(binarySearch([-5, 2, 4, 6, 10], 10));  // 4
 console.log(binarySearch([-5, 2, 4, 6, 10], 4));  // 2
 console.log(binarySearch([-5, 2, 4, 6, 10], 20));  // -1
+
+// Time Complexity: O(log N) : Logarithmic Time Complexity
