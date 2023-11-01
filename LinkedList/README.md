@@ -16,7 +16,7 @@ The linked list data structure supports `three` main operations:
 
 - **Search**: To find an item given its value.
 
-// Image will go here
+<img src="./LinkedList.png" alt="Linked List Image" />
 
 <b><u> Linked List Usage </u></b>
 All applications of both stacks and queues are applications of linked list.
@@ -25,6 +25,6 @@ Ex: image Viewer (in slideshow)
 
 <b><u> Linked List Node </u></b>
 
-// Image will go here
+<img src="./Node.png" alt="Node of Linked List" />
 
 
