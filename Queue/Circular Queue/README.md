@@ -19,3 +19,7 @@ The circular queue data structure supports 2 main operations:
 - Clock 
 - Streaming Data - *where circular queue act as a buffer()*
 - Traffic Lights - *computer operated*
+
+## Circular Queue Implementation Map
+
+<img src="./CircularQueueMap.png" alt="Circular Queue Implementation Image" />
