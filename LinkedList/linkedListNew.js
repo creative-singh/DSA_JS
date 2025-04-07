@@ -119,6 +119,23 @@ class LinkedList {
     return removedValue || "Element not found";
   }
 
+  search(value) {
+    if(this.isEmpty()) {
+      return -1
+    }
+    let i = 0;
+    let curr = this.head
+    console.log(curr)
+    while(curr) {
+      if(curr.value === value) {
+        return i
+      }
+      curr = curr.next
+      i++
+    }
+    return -1
+  }
+
   print() {
     if (this.isEmpty()) {
       console.log('The list is empty.');
@@ -131,6 +148,18 @@ class LinkedList {
       }
       console.log(listValues);
     }
+  }
+
+  reverse() {
+    let prev = null
+    let curr = this.head
+    while(curr) {
+      let next = curr.next
+      curr.next = prev
+      prev = curr
+      curr = next
+    }
+    this.head = prev
   }
 }
 
@@ -156,7 +185,14 @@ console.log(list.remove(2));
 list.print();
 list.insert(30, 2);
 list.print();
-console.log(list.removeValue(10));
+// console.log(list.removeValue(10));
+// list.print();
+// console.log(list.removeValue(20));
+// list.print();
+console.log(list.search(50));
+console.log(list.search(30));
+console.log(list.search(40));
 list.print();
-console.log(list.removeValue(20));
+list.reverse();
 list.print();
+
