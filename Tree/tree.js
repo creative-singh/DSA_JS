@@ -108,6 +108,36 @@ class BinarySearchTree {
         if(!root.right) return root.value
         else return this.max(root.right)
     }
+
+    delete(value) {
+        this.root = this.deleteNode(this.root, value)
+    }
+
+    deleteNode(root, value) {
+        if(root === null) {
+            return root
+        }
+        if(value < root.value) {
+            root.left = this.deleteNode(root.left, value);
+        } else if(value > root.value) {
+            root.right = this.deleteNode(root.right, value);
+        } else {
+            if(!root.left && !root.right) {
+                return null
+            }
+            if(!root.left) {
+                return root.rigt
+            } else if(!root.right) {
+                return root.left
+            }
+            // If both scenario fails, the node has 2 child nodes
+            // In this scenario, we copy the value of in-order successor to the node
+            // and delete the in-order successor ie., min value in RIGHT subtree
+            root.value = this.min(root.right);
+            root.right = this.deleteNode(root.right, root.value);
+        }
+        return root;    
+    }
 }
 
 const bst = new BinarySearchTree();
@@ -116,32 +146,43 @@ console.log(bst.isEmpty())
 bst.insert(10);
 bst.insert(5);
 bst.insert(15);
-bst.insert(7);
+// bst.insert(7);
 bst.insert(3);
 
-console.log(bst.search(bst.root, 3))
-console.log(bst.search(bst.root, 30))
-console.log(bst.search(bst.root, 5))
+// console.log(bst.search(bst.root, 3))
+// console.log(bst.search(bst.root, 30))
+// console.log(bst.search(bst.root, 5))
 
-console.log("- - BFS - -")
-console.log("- - PRE-ORDER - -");
-bst.preOrder(bst.root)
-console.log("- - PRE-ORDER END - -");
+// console.log("- - BFS - -")
+// console.log("- - PRE-ORDER - -");
+// bst.preOrder(bst.root)
+// console.log("- - PRE-ORDER END - -");
 
-console.log("- - IN-ORDER - -");
-bst.inOrder(bst.root);
-console.log("- - IN-ORDER END - -");
+// console.log("- - IN-ORDER - -");
+// bst.inOrder(bst.root);
+// console.log("- - IN-ORDER END - -");
 
-console.log("- - POST-ORDER - -");
-bst.postOrder(bst.root);
-console.log("- - POST-ORDER END - -");
-console.log("- - BFS END - -")
+// console.log("- - POST-ORDER - -");
+// bst.postOrder(bst.root);
+// console.log("- - POST-ORDER END - -");
+// console.log("- - BFS END - -")
 
 console.log("- - DFS - -")
 bst.levelOrder(bst.root);
 console.log("- - DFS END - -")
 
-console.log("MIN :: ", bst.min(bst.root));
-console.log("MAX :: ", bst.max(bst.root));
+// console.log("MIN :: ", bst.min(bst.root));
+// console.log("MAX :: ", bst.max(bst.root));
 
+
+// DELETE NODE
+// bst.delete(3)
+// bst.levelOrder()
+// console.log("=")
+// bst.delete(15)
+// bst.levelOrder()
+// console.log("=")
+bst.delete(10)
+bst.levelOrder()
+console.log("=")
 
