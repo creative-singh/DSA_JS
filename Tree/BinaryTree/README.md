@@ -2,12 +2,12 @@
 
 How tree works in local environment
 
-## Different Traversing on Trees
+## Different Traversing on Binary Trees
 
-- DFS - Depth First Search
+- DFS (**Depth First Search**)
     - Pre Order Traversal
     - In Order Traversal
     - Post Order Traversal
 
-- BFS - Breadth First Search
+- BFS (**Breadth First Search**)
     - Level Order Traversal
