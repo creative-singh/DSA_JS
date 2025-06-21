@@ -1,9 +1,13 @@
-class Stack {
+class MonotonicStack {
   constructor() {
     this.items = [];
   }
 
   push(element) {
+    // Maintain Increasing Order
+    while (!this.isEmpty() && this.peek() > element) {
+      this.pop();
+    }
     this.items.push(element);
   }
 
@@ -19,24 +23,26 @@ class Stack {
     return this.items.length === 0;
   }
 
-  size() {
-    return this.items.length;
-  }
-
   print() {
     console.log(this.items.toString());
   }
 }
 
-const stack = new Stack();
-console.log(stack.isEmpty());
+// Example: Next Greater Element
+const findNextGreaterElement = (arr) => {
+  const stack = new MonotonicStack();
+  const result = new Array(arr.length).fill(-1);
 
-stack.push(1);
-stack.push(2);
-stack.push(3);
-stack.print();
-console.log(stack.size());
+  for (let i = 0; i < arr.length; i++) {
+    while (!stack.isEmpty() && arr[stack.peek()] < arr[i]) {
+      const index = stack.pop();
+      result[index] = arr[i];
+    }
+    stack.push(i);
+  }
 
-console.log(stack.pop(3));
-stack.print();
-console.log(stack.peek());
+  return result;
+};
+
+const arr = [4, 5, 2, 10, 8];
+console.log("Next Greater Element: ", findNextGreaterElement(arr));

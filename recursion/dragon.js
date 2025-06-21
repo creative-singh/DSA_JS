@@ -9,5 +9,5 @@ const dragon = (numbers) => {
 };
 
 let result = [];
-dragon([3142, 5798, 6550, 5914]);
+dragon([3142, 5798, 6551, 5914]);
 console.log(result);
