@@ -1,6 +1,6 @@
 # Topological Sort
 
-![Topological Sort Visualization](./GraphAssets/Topological%20Sort.png)
+![Topological Sort Visualization](../GraphAssets/Topological%20Sort.png)
 
 ## 📚 Quick Revision Notes
 
